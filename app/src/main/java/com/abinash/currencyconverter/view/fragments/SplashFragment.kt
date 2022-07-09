@@ -1,5 +1,6 @@
 package com.abinash.currencyconverter.view.fragments
 
+import android.net.Network
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,7 @@ import com.abinash.currencyconverter.networking.NetworkUtil
 import com.abinash.currencyconverter.viewmodel.SplashVM
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SplashFragment : Fragment() {
@@ -22,6 +24,8 @@ class SplashFragment : Fragment() {
     private lateinit var binding: FragmentSplashBinding
 
     private val viewModel: SplashVM by viewModel()
+
+    private val networkUtil: NetworkUtil by inject()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,7 +36,7 @@ class SplashFragment : Fragment() {
 
         binding.btnRetry.setOnClickListener {
 
-            if (NetworkUtil().isOnline(context!!)) {
+            if (networkUtil.isOnline()) {
                 viewModel.start()
                 binding.btnRetry.visibility = View.GONE
                 binding.animError.visibility = View.GONE
@@ -51,7 +55,7 @@ class SplashFragment : Fragment() {
                 }
                 ERROR -> {
                     binding.btnRetry.visibility = View.VISIBLE
-                    if (NetworkUtil().isOnline(context!!)) {
+                    if (networkUtil.isOnline()) {
                         binding.animError.visibility = View.VISIBLE
                         binding.animNoInternet.visibility = View.GONE
                         binding.animLoading.visibility = View.GONE

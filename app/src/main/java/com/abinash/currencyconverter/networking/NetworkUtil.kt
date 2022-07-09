@@ -6,11 +6,18 @@ import android.net.NetworkCapabilities
 import android.util.Log
 import androidx.core.content.ContextCompat
 import androidx.core.content.getSystemService
+import org.koin.android.ext.koin.androidApplication
+import org.koin.dsl.module
 
-class NetworkUtil {
+val networkModule= module {
+    single {
+        NetworkUtil(androidApplication())
+    }
+}
 
+class NetworkUtil(val context: Context) {
 
-    fun isOnline(context: Context): Boolean {
+    fun isOnline(): Boolean {
         val connectivityManager =
             context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val capabilities =

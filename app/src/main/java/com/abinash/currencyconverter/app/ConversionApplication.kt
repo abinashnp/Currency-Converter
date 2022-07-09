@@ -3,6 +3,7 @@ package com.abinash.currencyconverter.app
 import android.app.Application
 import com.abinash.currencyconverter.di.appModule
 import com.abinash.currencyconverter.networking.apiClientModule
+import com.abinash.currencyconverter.networking.networkModule
 import com.abinash.currencyconverter.networking.networkRepoModule
 import com.abinash.currencyconverter.persistent.prefModule
 import com.abinash.currencyconverter.repo.roomDBRepoModule
@@ -18,7 +19,7 @@ class ConversionApplication:Application() {
         startKoin{
             androidLogger()
             androidContext(this@ConversionApplication)
-            modules(listOf(appModule, apiClientModule, networkRepoModule, roomDBRepoModule, timeUtilModule, prefModule))
+            modules(listOf(appModule, apiClientModule, networkRepoModule, roomDBRepoModule, timeUtilModule, prefModule, networkModule))
         }
     }
 }
