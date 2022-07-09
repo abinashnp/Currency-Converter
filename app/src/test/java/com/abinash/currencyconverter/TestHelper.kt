@@ -8,7 +8,6 @@ import java.io.InputStreamReader
 class TestHelper {
 
     companion object {
-        @Throws(IOException::class)
         fun readFileWithoutNewLineFromResources(fileName: String): String {
             var inputStream: InputStream? = null
             try {
