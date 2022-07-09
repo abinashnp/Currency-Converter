@@ -76,12 +76,6 @@ class SplashVM(var repo: RoomDBRepo, private val networkRepo: NetworkRepo) : Vie
     }
 
     fun fetchCurrencies() {
-        viewModelScope.launch {
-            client.getApi().getConversionRates("asa").
-            map {
-
-            }.catch {  }.collect {  }
-        }
         message.value = "Fetching currencies..."
         networkRepo.fetchCurrencies(object : ResponseHandler {
             override fun handleSuccess(response: ResponseBody) {

@@ -12,7 +12,7 @@ interface Api {
     fun getCurrencies(): Single<ResponseBody>
 
     @GET("api/latest.json")
-    suspend fun getConversionRates(
+    fun getConversionRates(
         @Query("app_id") appId: String
     ): SharedFlow<ResponseBody>
 
