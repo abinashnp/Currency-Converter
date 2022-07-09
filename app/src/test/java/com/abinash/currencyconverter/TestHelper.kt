@@ -13,6 +13,7 @@ class TestHelper {
             try {
                 inputStream =
                     javaClass.classLoader?.getResourceAsStream(fileName)
+
                 val builder = StringBuilder()
                 val reader = BufferedReader(InputStreamReader(inputStream))
 

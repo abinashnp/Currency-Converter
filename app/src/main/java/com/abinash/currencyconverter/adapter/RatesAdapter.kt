@@ -62,8 +62,8 @@ class RatesAdapter(//List of entries
         return df.format(number)
     }
 
-    fun formatAsCurrency(str: String): String {
-        var str = str
+    fun formatAsCurrency(string: String): String {
+        var str = string
         val floatPos = if (str.indexOf(".") > -1) str.length - str.indexOf(".") else 0
         val nGroups = (str.length - floatPos - 1 - if (str.indexOf("-") > -1) 1 else 0) / 3
         for (i in 0 until nGroups) {
