@@ -14,6 +14,6 @@ interface Api {
     @GET("api/latest.json")
     fun getConversionRates(
         @Query("app_id") appId: String
-    ): SharedFlow<ResponseBody>
+    ): Single<ResponseBody>
 
 }
