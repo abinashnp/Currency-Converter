@@ -52,6 +52,7 @@ class HomeFragment : Fragment() {
 
         adapter = RatesAdapter(arrayListOf())
 
+        //s
         val manager: RecyclerView.LayoutManager = LinearLayoutManager(context)
 
         if (binding.priceList.itemDecorationCount == 0) {
