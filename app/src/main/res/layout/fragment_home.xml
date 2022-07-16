@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgcolor"
+    android:padding="10sp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.fragments.HomeFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:id="@+id/topBar"
+        android:background="@color/whiteonprimary"
+        android:padding="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <EditText
+            android:id="@+id/amountField"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:inputType=""
+            android:text="@string/defaultAmount"
+            android:padding="10sp"
+            android:textCursorDrawable="@null"
+            android:gravity="bottom"
+            android:background="@color/bgcolor"
+            android:textColor="@color/secondary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/dropdown"
+            app:layout_constraintEnd_toStartOf="@+id/dropdown"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dropdown"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/whiteonprimary"
+            app:boxBackgroundMode="outline"
+            app:boxCollapsedPaddingTop="0sp"
+            app:barrierMargin="0sp"
+            android:hint="Currency"
+            app:boxStrokeColor="?colorPrimary"
+            app:boxStrokeWidth="0sp"
+            app:boxStrokeWidthFocused="0sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <AutoCompleteTextView
+                android:id="@+id/currencySpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:textSize="17sp"
+                android:text="USD" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/tvTimeStamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5sp"
+        android:textColor="@color/darkonprimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/priceList"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_marginTop="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvTimeStamp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topBar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

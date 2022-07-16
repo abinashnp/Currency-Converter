@@ -1,0 +1,21 @@
+
+plugins {
+    id 'com.android.application' version '7.2.0' apply false
+    id 'com.android.library' version '7.2.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.7.0' apply false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    truthVersion = '1.0.1'
+    retrofitVersion = '2.9.0'
+    rxVersion = '2.0.1'
+    daggerVersion = '2.42'
+    roomVersion = '2.4.2'
+    lifecycleVersion = '2.4.1'
+    lottieVersion = '5.2.0'
+    koin_version = '3.2.0'
+}

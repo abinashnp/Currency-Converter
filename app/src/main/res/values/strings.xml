@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Currency Converter</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="rates">rates</string>
+    <string name="lastread">lastread</string>
+    <string name="lasttimestamp">lastimestamp</string>
+    <string name="timestamp">timestamp</string>
+    <string name="currentCurrency">current_currency</string>
+    <string name="defaultCurrencySymbol">USD</string>
+    <string name="defaultAmount">100</string>
+
+
+    <string name="time_ago_prefix"> </string>
+    <string name="time_ago_suffix">ago</string>
+    <string name="time_ago_seconds">less than a minute</string>
+    <string name="time_ago_minute">about a minute</string>
+    <string name="time_ago_minutes">%d minutes</string>
+    <string name="time_ago_hour">about an hour</string>
+    <string name="time_ago_hours">about %d hours</string>
+    <string name="time_ago_day">a day</string>
+    <string name="time_ago_days">%d days</string>
+    <string name="time_ago_month">about a month</string>
+    <string name="time_ago_months">%d months</string>
+    <string name="time_ago_year">about a year</string>
+    <string name="time_ago_years">%d years</string>
+    <string name="am_format">%d:%d am</string>
+    <string name="pm_format">%d:%d pm</string>
+    <string name="today">Today</string>
+</resources>
